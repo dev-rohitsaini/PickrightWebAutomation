@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
@@ -13,7 +14,8 @@ import java.util.concurrent.TimeUnit;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class InvestorLogin {
-	public static void main(String[] args) throws InterruptedException {
+	@Test
+	public static void LoginAsInvestor() throws InterruptedException {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		
@@ -61,11 +63,6 @@ public class InvestorLogin {
             // Close the browser
             driver.quit();
         }
-		
-		
-		
-		
-		
 	}
 
 }
