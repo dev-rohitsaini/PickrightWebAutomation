@@ -1,29 +1,22 @@
 package tests;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import base.BaseTest;
+
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class InvestorLogin {
+public class InvestorLoginTest extends BaseTest{
 	@Test
 	public static void LoginAsInvestor() throws InterruptedException {
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
-		
-		driver.get("https://uat-investor.pickright.co.in/login");
-		
-		//driver.findElement(By.xpath("//*[@id='mat-dialog-0']/app-trading-on-boarding-dialog/div/div[1]/div[2]/div[1]/a)")).click();
-		
-		//driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
+
+
 		
 		driver.findElement(By.cssSelector("input[type='tel']")).sendKeys("9365214785");
 		
@@ -51,14 +44,12 @@ public class InvestorLogin {
 
             String expectedText = "How can we help with your\r\n"
             		+ "Wealth Growth?";
-            if (h2Text.equals(expectedText)) {
-                System.out.println("Validation Successful! The text of the first h2 tag matches the expected text.");
-            } else {
-                System.out.println("Validation Failed! Actual text '" + h2Text + "' does not match expected text '" + expectedText + "'.");
-            }
-
+            
+            Assert.assertEquals(h2Text, expectedText, "Text assertion failed");
+            
         } catch (Exception e) {
             System.out.println("Validation Failed! Exception occurred: " + e.getMessage());
+         // throw new RuntimeException("Validation Failed! Exception occurred: " + e.getMessage());
         } finally {
             // Close the browser
             driver.quit();
