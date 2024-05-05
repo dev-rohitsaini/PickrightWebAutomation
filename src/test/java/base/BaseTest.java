@@ -21,7 +21,9 @@ public class BaseTest {
 	@BeforeTest
 	public void setUp() throws IOException{
 		if(driver==null) {
-			FileReader fr = new FileReader(System.getProperty("user.dir")+"\\src\\test\\resources\\config\\config.properties");
+			//FileReader fr = new FileReader(System.getProperty("user.dir")+"\\src\\test\\resources\\config\\config.properties");
+			FileReader fr = new FileReader(System.getProperty("user.dir") + "/src/test/resources/config/config.properties");
+
 			prop.load(fr);
 		}
 		

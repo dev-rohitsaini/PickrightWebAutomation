@@ -33,7 +33,7 @@ public class InvestorLoginTest extends BaseTest{
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
-		Thread.sleep(3000);
+
 		System.out.println("Logged in");
 		
 		try {
