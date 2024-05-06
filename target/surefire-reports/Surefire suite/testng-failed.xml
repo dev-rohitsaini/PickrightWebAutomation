@@ -10,11 +10,6 @@
           <include name="LoginAsInvestor"/>
         </methods>
       </class> <!-- tests.InvestorLoginTest -->
-      <class name="base.BaseTest">
-        <methods>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- base.BaseTest -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->
